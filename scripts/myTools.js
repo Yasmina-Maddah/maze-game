@@ -13,12 +13,6 @@ start.addEventListener("mouseover", () => {
     resetBoundaries();
 })
 
-function resetBoundaries() {
-    boundaries.forEach(boundary => {
-      boundary.classList.remove("highlighted");
-    });
-  }
-
 boundaries.forEach(boundary => { 
     boundary.addEventListener("mouseover", () => {
         if (gameStarted) {
@@ -30,12 +24,24 @@ boundaries.forEach(boundary => {
     });
 });
 
-function highlightBoundaries() {
+end.addEventListener("mouseover", () => {
+    if (gameStarted && !gameLost) {
+      status.textContent = "You win! Congratulations!";
+      gameStarted = false;
+    }
+  });
+
+  function resetBoundaries() {
+    boundaries.forEach(boundary => {
+      boundary.classList.remove("highlighted");
+    });
+  }
+
+  function highlightBoundaries() {
     boundaries.forEach(boundary => {
       boundary.classList.add("highlighted");
     });
   }
-
 
 
 
