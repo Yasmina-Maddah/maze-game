@@ -43,5 +43,13 @@ end.addEventListener("mouseover", () => {
     });
   }
 
+  document.getElementById("game").addEventListener("mouseleave", () => {
+    if (gameStarted) {
+      gameLost = true;
+      status.textContent = "You lost! Try again by hovering over 'S'.";
+      highlightBoundaries();
+    }
+  });
+
 
 
