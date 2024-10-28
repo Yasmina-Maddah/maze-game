@@ -18,3 +18,16 @@ function resetBoundaries() {
       boundary.classList.remove("highlighted");
     });
   }
+
+boundaries.forEach(boundary => { 
+    boundary.addEventListener("mouseover", () => {
+        if (gameStarted) {
+            gameLost = true;
+            status.textContent = "You lost! Try again by hovering over 'S'.";
+            highlightBoundaries();
+
+        }
+    });
+});
+
+
