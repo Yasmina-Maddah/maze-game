@@ -30,4 +30,12 @@ boundaries.forEach(boundary => {
     });
 });
 
+function highlightBoundaries() {
+    boundaries.forEach(boundary => {
+      boundary.classList.add("highlighted");
+    });
+  }
+
+
+
 
